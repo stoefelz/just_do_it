@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Just Do It</string>
+
+    <!-- Add new task page -->
+    <string name="heading_add">Add a new task</string>
+    <string name="task_name_add">What should be done?</string>
+    <string name="color_add">Change your color</string>
+    <string name="date_add">What is your deadline?</string>
+    <string name="submit_add">Add</string>
+    <string name="load_date">Loading date</string>
+    <string name="load_time">Loading time</string>
+    <string name="fill_hint">What is your next task?</string>
+
+    <!-- add task activity -->
+    <string name="error_task_length_short">Your task must contain some more characters</string>
+    <string name="error_task_length_long">Your task contains too many characters</string>
+
+    <!-- color picker -->
+    <string name="color_picker_heading">Pick your color</string>
+
+    <!-- about -->
+    <string name="appname_about">Just Do It</string>
+    <string name="app_logo">App Icon</string>
+    <string name="text_about">Another Todo App in the Android world. No new innovative features but with a slightly different design.</string>
+    <string name="copyright_about">© Pascal Stöfelz</string>
+    <string name="link_about">&lt;a href="https://justdoit.stoefelz.com">justdoit.stoefelz.com&lt;/a></string>
+    <string name="logo_heading">About this app</string>
+
+    <!-- main page -->
+    <string name="main_overview">Your tasks</string>
+    <string name="add_button">New task</string>
+    <string name="no_tasks">You have nothing to do</string>
+    <string name="delete_all">Delete all tasks</string>
+    <string name="about_page">About this app</string>
+    <string name="delete_item">This task is finished</string>
+    <string name="edit_item">Edit this task</string>
+
+    <!-- edit page -->
+    <string name="heading_change">Edit your task</string>
+    <string name="submit_change">Edit</string>
+
+</resources>

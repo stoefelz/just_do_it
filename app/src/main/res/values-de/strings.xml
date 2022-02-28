@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Do It</string>
+
+    <!-- Add new task page -->
+    <string name="heading_add">Neue Aufgabe hinzufügen</string>
+    <string name="task_name_add">Was hast du als nächstes zu tun?</string>
+    <string name="color_add">Wähle eine Farbe</string>
+    <string name="date_add">Bis wann musst du fertig sein?</string>
+    <string name="submit_add">Hinzufügen</string>
+    <string name="load_date">Lade Datum</string>
+    <string name="load_time">Lade Uhrzeit</string>
+    <string name="fill_hint">Was ist deine nächste Aufgabe?</string>
+
+    <!-- add task activity -->
+    <string name="error_task_length_short">Dein Aufgabenname ist etwas zu kurz</string>
+    <string name="error_task_length_long">Dein Aufgabenname ist etwas zu lang</string>
+
+    <!-- color picker -->
+    <string name="color_picker_heading">Wähle eine Farbe</string>
+
+    <!-- about -->
+    <string name="app_logo">App Logo</string>
+    <string name="appname_about">Just Do It</string>
+    <string name="text_about">Eine weitere Todo App in der Androidwelt. Keine neuen innovativen Features, nur mit einem etwas anderen Design.</string>
+    <string name="copyright_about">© Pascal Stöfelz</string>
+    <string name="link_about">&lt;a href="https://justdoit.stoefelz.com/?lang=de">justdoit.stoefelz.com&lt;/a></string>
+    <string name="logo_heading">Über diese App</string>
+
+    <!-- main page -->
+    <string name="main_overview">Deine Aufgaben</string>
+    <string name="add_button">Aufgabe hinzufügen</string>
+    <string name="no_tasks">Du hast zurzeit nichts zu tun</string>
+    <string name="delete_all">Lösche alle Aufgaben</string>
+    <string name="about_page">Über diese App</string>
+    <string name="delete_item">Diese Aufgabe ist erledigt</string>
+    <string name="edit_item">Bearbeite diese Aufgabe</string>
+
+    <!-- edit page -->
+    <string name="heading_change">Aufgabe bearbeiten</string>
+    <string name="submit_change">Ändern</string>
+
+</resources>

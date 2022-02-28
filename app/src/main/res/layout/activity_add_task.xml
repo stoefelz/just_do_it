@@ -1,0 +1,105 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="40dp"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/heading_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heading_add"
+            android:layout_alignParentRight="true"
+            android:textAlignment="textEnd"
+            android:textSize="30sp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/task_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading_add"
+            android:layout_marginTop="40dp"
+            android:hint="@string/task_name_add"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:autofillHints="">
+        </EditText>
+
+        <TextView
+            android:id="@+id/color_text_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_add"
+            android:layout_below="@id/task_add"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp">
+        </TextView>
+
+        <Button
+            android:id="@+id/color_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/col1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_below="@id/color_text_add"
+            android:layout_marginTop="10dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/date_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_add"
+            android:layout_below="@id/color_add"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/selected_date_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/load_date"
+            android:layout_below="@id/date_add"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/submit_button">
+        </TextView>
+
+        <TextView
+            android:id="@+id/selected_time_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/load_time"
+            android:layout_below="@id/date_add"
+            android:layout_toEndOf="@id/selected_date_add"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/submit_button">
+        </TextView>
+
+        <Button
+            android:id="@+id/submit_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selected_date_add"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/submit_button"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/submit_add">
+        </Button>
+
+    </RelativeLayout>
+</ScrollView>
