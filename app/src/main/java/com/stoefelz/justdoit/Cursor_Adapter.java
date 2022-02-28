@@ -21,9 +21,9 @@ public class Cursor_Adapter extends ResourceCursorAdapter {
     @SuppressLint({"Range"})
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView task_name = (TextView) view.findViewById(R.id.task_name);
-        TextView task_deadline = (TextView) view.findViewById(R.id.task_deadline);
-        View colored_line = (View) view.findViewById(R.id.colored_line);
+        TextView task_name = view.findViewById(R.id.task_name);
+        TextView task_deadline = view.findViewById(R.id.task_deadline);
+        View colored_line = view.findViewById(R.id.colored_line);
 
         //set elements in listview
         if(cursor.getColumnIndex("task") > -1 && cursor.getColumnIndex("deadline") > -1 && cursor.getColumnIndex("color") > -1) {

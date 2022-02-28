@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JustDoIt">
         <activity
-            android:name=".Date_Picker"
-            android:exported="false" />
-        <activity
             android:name=".About_Activity"
             android:exported="false" />
         <activity

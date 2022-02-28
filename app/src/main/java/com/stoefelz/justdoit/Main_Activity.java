@@ -37,7 +37,7 @@ public class Main_Activity extends AppCompatActivity {
         new_button = findViewById(R.id.new_button);
         colored_line = findViewById(R.id.colored_line_main);
         empty_list = findViewById(R.id.empty);
-        list_view = (ListView) findViewById(R.id.list_view);
+        list_view = findViewById(R.id.list_view);
 
         db_connection = new DB_Connection(getApplicationContext(), "tasks", null, db_version);
         db_data_cursor = db_connection.get_tasks();
