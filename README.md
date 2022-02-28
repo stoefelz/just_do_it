@@ -11,9 +11,7 @@ You should not take this project too seriously - the main goal was to get a roug
 https://justdoit.stoefelz.com
 
 
-<a href="https://play.google.com/store/apps/">
-  <img alt="Jetzt bei Google Play" width="25%" src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png">
-</a>
+<a href='https://play.google.com/store/apps/details?id=com.stoefelz.justdoit&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="25%" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
   
 <div style="display:flex;">
