@@ -12,7 +12,7 @@ https://justdoit.stoefelz.com
 
 
 <a href="https://play.google.com/store/apps/">
-  <img alt="Jetzt bei Google Play" width="20%" src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png">
+  <img alt="Jetzt bei Google Play" width="25%" src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png">
 </a>
 
   
