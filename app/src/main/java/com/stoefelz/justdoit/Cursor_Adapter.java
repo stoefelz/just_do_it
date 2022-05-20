@@ -40,7 +40,7 @@ public class Cursor_Adapter extends ResourceCursorAdapter {
                 task_deadline.setTextColor(ResourcesCompat.getColor(task_deadline.getResources(),R.color.col3, null));
             }
             else {
-                task_deadline.setTextColor(ResourcesCompat.getColor(task_deadline.getResources(),R.color.black, null));
+                task_deadline.setTextColor(ResourcesCompat.getColor(task_deadline.getResources(),R.color.date_color, null));
             }
             colored_line.setBackgroundColor(cursor.getInt(cursor.getColumnIndex("color")));
             view.setLongClickable(true);
