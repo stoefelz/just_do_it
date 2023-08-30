@@ -3,7 +3,7 @@
 
 One of the best Todo Apps in the world. 
 
-A leightweight and fast app without unnecessary features. It does what it is supposed to do. Creating new tasks, editing and deleting them.
+A lightweight and fast app without unnecessary features. It does what it is supposed to do. Creating new tasks, editing and deleting them.
 
 You should not take this project too seriously - the main goal was to get a rough idea of how to create an app. 
 
