@@ -1,73 +1,77 @@
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="40dp"
-    android:layout_marginEnd="40dp"
-    android:layout_marginTop="40dp"
-    android:layout_marginBottom="40dp"
+    android:fitsSystemWindows="true"
     android:scrollbars="none">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="25dp">
 
         <TextView
             android:id="@+id/logo_heading"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/logo_heading"
-            android:layout_alignParentRight="true"
             android:textAlignment="textEnd"
-            android:textSize="30sp">
-        </TextView>
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/logo_about"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_below="@id/logo_heading"
-            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
             android:background="@color/app_icon_background"
             android:contentDescription="@string/app_logo"
             android:src="@drawable/app_icon_foreground"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
-        </ImageView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_heading"
+            tools:srcCompat="@mipmap/app_icon" />
 
         <TextView
             android:id="@+id/text_about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:maxWidth="400dp"
             android:text="@string/text_about"
-            android:layout_below="@id/logo_about"
-            android:layout_centerHorizontal="true"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:layout_marginBottom="50dp">
-        </TextView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_about" />
 
         <TextView
             android:id="@+id/copyright_about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/copyright_about"
-            android:layout_below="@id/text_about"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:text="@string/copyright_about"
             android:textSize="15sp"
-            android:layout_marginBottom="5dp">
-        </TextView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_about" />
 
         <TextView
             android:id="@+id/link_about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/copyright_about"
             android:layout_centerHorizontal="true"
-            android:linksClickable="true"
-            android:text="@string/link_about"
-            android:textSize="15sp">
-        </TextView>
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/copyright_about" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
