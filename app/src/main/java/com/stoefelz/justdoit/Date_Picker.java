@@ -3,11 +3,9 @@ package com.stoefelz.justdoit;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-
 import java.util.Calendar;
 
 //Date Picker Dialog for adding Task
@@ -22,9 +20,7 @@ public class Date_Picker extends DialogFragment {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        DatePickerDialog date_picker_dialog =
-                new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener)getActivity(), year, month, day);
-        return date_picker_dialog;
+        return new DatePickerDialog(requireActivity(), (DatePickerDialog.OnDateSetListener)getActivity(), year, month, day);
     }
 }
 

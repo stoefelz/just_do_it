@@ -1,11 +1,14 @@
 package com.stoefelz.justdoit;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 public class Color_Picker extends AppCompatActivity {
     Button color_btn_1;
@@ -26,6 +29,13 @@ public class Color_Picker extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_picker);
+        //edge to edge
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        //set statusbar color depending light/night mode
+        boolean isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        WindowInsetsControllerCompat windowInsetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        windowInsetsController.setAppearanceLightStatusBars(!isNightMode);
 
         //sets only click listener on every button with intent answer
         color_btn_1 = findViewById(R.id.color_button_1);

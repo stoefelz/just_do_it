@@ -3,9 +3,12 @@ package com.stoefelz.justdoit;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -15,12 +18,15 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     Button submit_btn;
@@ -41,6 +47,13 @@ public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
+        //edge to edge
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        //set statusbar color depending light/night mode
+        boolean isNightMode = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        WindowInsetsControllerCompat windowInsetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        windowInsetsController.setAppearanceLightStatusBars(!isNightMode);
 
         submit_btn = findViewById(R.id.submit_add);
         color_btn = findViewById(R.id.color_add);
@@ -49,6 +62,17 @@ public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDa
         selected_date = findViewById(R.id.selected_date_add);
         selected_time = findViewById(R.id.selected_time_add);
         db_connection = new DB_Connection(getApplicationContext(), "tasks", null, db_connection_version);
+
+        task_name.requestFocus();
+        task_name.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm != null) {
+                    imm.showSoftInput(task_name, InputMethodManager.SHOW_IMPLICIT);
+                }
+            }
+        }, 200);
 
         //default values for date and time, atm date and time 1 week later
         DateFormat date_format = new SimpleDateFormat("dd.MM.yyyy");
@@ -63,7 +87,8 @@ public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDa
 
         //check if edit intent was called -> set correct data from db
         Intent get_intent = getIntent();
-        String id_code = get_intent.getExtras().getString("id_code");
+        String id_code = Objects.requireNonNull(get_intent.getExtras()).getString("id_code");
+        assert id_code != null;
         if(id_code.equals("edit")) {
             is_on_edit = true;
             heading_add.setText(R.string.heading_change);
@@ -74,6 +99,7 @@ public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDa
             when_edit_row_id = get_intent.getExtras().getInt("task_id");
             String get_date = get_intent.getExtras().getString("task_date");
             //say nothing, it is working
+            assert get_date != null;
             if(get_date.length() == 16) {
                 selected_date.setText(get_date.substring(0, 10));
                 selected_time.setText(get_date.substring(11, 16));
@@ -126,12 +152,9 @@ public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDa
             }
         });
 
-        selected_time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Time_Picker time_picker = new Time_Picker();
-                time_picker.show(getSupportFragmentManager(), "time_picker_dialog");
-            }
+        selected_time.setOnClickListener(v -> {
+            Time_Picker time_picker = new Time_Picker();
+            time_picker.show(getSupportFragmentManager(), "time_picker_dialog");
         });
     }
 
@@ -142,6 +165,7 @@ public class Add_Task extends AppCompatActivity implements DatePickerDialog.OnDa
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1) {
             if(resultCode == 2) {
+                assert data != null;
                 task_color = data.getIntExtra("color", R.color.col1);
                 color_btn.setBackgroundColor(task_color);
             }
